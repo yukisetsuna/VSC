@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminA">
+
+    <Button
+        android:id="@+id/lout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/log_out" />
+
+    <ScrollView
+        android:id="@+id/nox"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="118dp"
+        android:textAlignment="center">
+
+        <LinearLayout
+            android:id="@+id/hook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/move1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/adds" />
+
+            <Button
+                android:id="@+id/move2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eddits" />
+
+            <Button
+                android:id="@+id/move3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/show_all_questions" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/admins"
+        android:textColor="#000"
+        android:textSize="30sp" />
+
+</RelativeLayout>

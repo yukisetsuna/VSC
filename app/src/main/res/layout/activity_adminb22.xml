@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminB22">
+    <TextView
+        android:id="@+id/idntxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:text="@string/identification"
+        android:textColor="#000"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/idn3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="29dp"
+        android:text="@string/submit"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/mc1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/idntxt"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="@string/question_here"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/idn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/mc1"
+        android:layout_alignStart="@+id/mc1"
+        android:layout_below="@+id/mc1"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/answer_here"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/mc21"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/idn2"
+        android:layout_alignStart="@+id/idn2"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:hint="@string/alternate_1"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/idn22"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/mc21"
+        android:layout_alignStart="@+id/mc21"
+        android:layout_below="@+id/mc21"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        android:hint="@string/alternate_2"
+        android:inputType="textPersonName" />
+
+</RelativeLayout>
