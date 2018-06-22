@@ -7,6 +7,8 @@ import android.database.SQLException;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +19,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Random;
 
 public class MainA2 extends AppCompatActivity {
 
@@ -47,6 +53,10 @@ public class MainA2 extends AppCompatActivity {
         final RadioButton setsa = (RadioButton) findViewById(R.id.set2a);
         final RadioButton setsb = (RadioButton) findViewById(R.id.set2b);
         final EditText setsss3 = (EditText) findViewById(R.id.sets3);
+        final HashMap<String, String> ax1 = new HashMap<>();
+        final HashMap<String, String> ax2 = new HashMap<>();
+        final HashMap<String, String> ax3 = new HashMap<>();
+
         dsx1.setStat1(1);
         dsx1.setStat2(0);
         go3.setVisibility(View.GONE);
@@ -98,15 +108,86 @@ public class MainA2 extends AppCompatActivity {
                  setsss3.setVisibility(View.GONE);
 
                  set4.setText(c1.toString()+". "+c.getString(3));
-                 seta.setText(c.getString(4));
-                 setb.setText(c.getString(5));
-                 setc.setText(c.getString(6));
-                 setd.setText(c.getString(7));
+                 ArrayList<String> rans = new ArrayList<>();
+                 rans.add(c.getString(4));
+                 rans.add(c.getString(5));
+                 rans.add(c.getString(6));
+                 rans.add(c.getString(7));
+                 Collections.shuffle(rans);
+                 seta.setText(rans.get(0));
+                 setb.setText(rans.get(1));
+                 setc.setText(rans.get(2));
+                 setd.setText(rans.get(3));
+                 dsx1.setStat3(c.getString(0));
+                 test1.setText(dsx1.getStat3());
+
+                 if(ax1.containsKey(dsx1.getStat3())){
+
+                 }else {
+                     ax1.put(dsx1.getStat3(), "N/A");
+                 }
+
              }
 
         } else {
             set4.setText("Database Not Connected");
         }
+
+        sets3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+
+                int sets4 = sets3.getCheckedRadioButtonId();
+                if (sets4 != -1) {
+                    RadioButton selectedRadioButton = (RadioButton) findViewById(sets4);
+                    String sets5 = selectedRadioButton.getText().toString();
+                    ax1.put(dsx1.getStat3(), sets5);
+                    test1.setText(ax1.get(dsx1.getStat3()));
+
+                } else {
+                    test1.setText("Nothing Selected");
+                    ax1.put(dsx1.getStat4(), "N/A");
+
+                }
+            }
+        });
+
+        setss3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+
+                int sets4 = setss3.getCheckedRadioButtonId();
+                if (sets4 != -1) {
+                    RadioButton selectedRadioButton = (RadioButton) findViewById(sets4);
+                    String sets5 = selectedRadioButton.getText().toString();
+                    ax1.put(dsx1.getStat4(), sets5);
+                    test1.setText(ax1.get(dsx1.getStat4()));
+
+                } else {
+                    test1.setText("Nothing Selected");
+                    ax2.put(dsx1.getStat4(), "N/A");
+
+                }
+            }
+        });
+
+        setsss3.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                ax1.put(dsx1.getStat5(), setsss3.getText().toString());
+                test1.setText(ax1.get(dsx1.getStat5()));
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
         RelativeLayout rlset;
         switch (dsx1.getSubject()) {
@@ -135,6 +216,8 @@ public class MainA2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sets3.clearCheck();
+                setss3.clearCheck();
+                setsss3.setText("");
 
                 Integer x1 = 0;
 
@@ -177,16 +260,6 @@ public class MainA2 extends AppCompatActivity {
                     setss3.setVisibility(View.GONE);
                     setsss3.setVisibility(View.GONE);
 
-                    int sets4 = sets3.getCheckedRadioButtonId();
-                    if (sets4 != -1) {
-                        RadioButton selectedRadioButton = (RadioButton) findViewById(sets4);
-                        String sets5 = selectedRadioButton.getText().toString();
-                        test1.setText(sets5);
-
-                    } else {
-                        test1.setText("Nothing Selected");
-
-                    }
 
                     if (c.moveToFirst()) {
 
@@ -194,10 +267,18 @@ public class MainA2 extends AppCompatActivity {
 
 
                             set4.setText(xx.toString() + ". " + c.getString(3));
-                            seta.setText(c.getString(4));
-                            setb.setText(c.getString(5));
-                            setc.setText(c.getString(6));
-                            setd.setText(c.getString(7));
+                            ArrayList<String> rans = new ArrayList<>();
+                            rans.add(c.getString(4));
+                            rans.add(c.getString(5));
+                            rans.add(c.getString(6));
+                            rans.add(c.getString(7));
+                            Collections.shuffle(rans);
+                            seta.setText(rans.get(0));
+                            setb.setText(rans.get(1));
+                            setc.setText(rans.get(2));
+                            setd.setText(rans.get(3));
+                            dsx1.setStat3(c.getString(0));
+                            test1.setText(dsx1.getStat3());
                         }
 
                     } else {
@@ -216,6 +297,13 @@ public class MainA2 extends AppCompatActivity {
 
 
                             set4.setText(xx.toString() + ". " + xc.getString(3));
+                            dsx1.setStat4(xc.getString(0));
+                            test1.setText(dsx1.getStat4());
+                            if(ax2.containsKey(dsx1.getStat4())){
+
+                            }else {
+                                ax2.put(dsx1.getStat4(), "N/A");
+                            }
                         }
 
                     } else {
@@ -232,6 +320,13 @@ public class MainA2 extends AppCompatActivity {
 
 
                             set4.setText(xx.toString() + ". " + zc.getString(3));
+                            dsx1.setStat5(zc.getString(0));
+                            test1.setText(dsx1.getStat5());
+                            if(ax3.containsKey(dsx1.getStat5())){
+
+                            }else {
+                                ax3.put(dsx1.getStat5(), "N/A");
+                            }
                         }
 
                     } else {
@@ -270,6 +365,8 @@ public class MainA2 extends AppCompatActivity {
 
 
                 sets3.clearCheck();
+                setss3.clearCheck();
+                setsss3.setText("");
 
                 Integer x1 = 0;
                 switch (dsx1.getDificulty().toString()){
@@ -310,16 +407,6 @@ public class MainA2 extends AppCompatActivity {
                     setss3.setVisibility(View.GONE);
                     setsss3.setVisibility(View.GONE);
 
-                    int sets4 = sets3.getCheckedRadioButtonId();
-                    if (sets4 != -1) {
-                        RadioButton selectedRadioButton = (RadioButton) findViewById(sets4);
-                        String sets5 = selectedRadioButton.getText().toString();
-                        test1.setText(sets5);
-
-                    } else {
-                        test1.setText("Nothing Selected");
-
-                    }
 
                     if (c.moveToFirst()) {
 
@@ -327,10 +414,18 @@ public class MainA2 extends AppCompatActivity {
 
 
                             set4.setText(xx.toString() + ". " + c.getString(3));
-                            seta.setText(c.getString(4));
-                            setb.setText(c.getString(5));
-                            setc.setText(c.getString(6));
-                            setd.setText(c.getString(7));
+                            ArrayList<String> rans = new ArrayList<>();
+                            rans.add(c.getString(4));
+                            rans.add(c.getString(5));
+                            rans.add(c.getString(6));
+                            rans.add(c.getString(7));
+                            Collections.shuffle(rans);
+                            seta.setText(rans.get(0));
+                            setb.setText(rans.get(1));
+                            setc.setText(rans.get(2));
+                            setd.setText(rans.get(3));
+                            dsx1.setStat3(c.getString(0));
+                            test1.setText(dsx1.getStat3());
                         }
 
                     } else {
@@ -349,6 +444,13 @@ public class MainA2 extends AppCompatActivity {
 
 
                             set4.setText(xx.toString() + ". " + xc.getString(3));
+                            dsx1.setStat4(xc.getString(0));
+                            test1.setText(dsx1.getStat4());
+                            if(ax2.containsKey(dsx1.getStat4())){
+
+                            }else {
+                                ax2.put(dsx1.getStat4(), "N/A");
+                            }
                         }
 
                     } else {
@@ -365,6 +467,13 @@ public class MainA2 extends AppCompatActivity {
 
 
                             set4.setText(xx.toString() + ". " + zc.getString(3));
+                            dsx1.setStat5(zc.getString(0));
+                            test1.setText(dsx1.getStat5());
+                            if(ax3.containsKey(dsx1.getStat5())){
+
+                            }else {
+                                ax3.put(dsx1.getStat5(), "N/A");
+                            }
                         }
 
                     } else {
@@ -421,6 +530,8 @@ public class MainA2 extends AppCompatActivity {
             }
         });
     }
+
+
 
     @Override
     public void onBackPressed() {

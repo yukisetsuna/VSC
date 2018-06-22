@@ -14,7 +14,9 @@ public class DataHandlers {
     public static String ans4;
     private static Integer stat1;
     private static Integer stat2;
-    private static Integer stat3;
+    private static String stat3;
+    private static String stat4;
+    private static String stat5;
 
 
     public static Integer getStat1() {
@@ -33,12 +35,28 @@ public class DataHandlers {
         DataHandlers.stat2 = stat2;
     }
 
-    public static Integer getStat3() {
+    public static String getStat3() {
         return stat3;
     }
 
-    public static void setStat3(Integer stat3) {
-        DataHandlers.stat2 = stat3;
+    public static void setStat3(String stat3) {
+        DataHandlers.stat3 = stat3;
+    }
+
+    public static String getStat4() {
+        return stat4;
+    }
+
+    public static void setStat4(String stat4) {
+        DataHandlers.stat4 = stat4;
+    }
+
+    public static String getStat5() {
+        return stat5;
+    }
+
+    public static void setStat5(String stat5) {
+        DataHandlers.stat5 = stat5;
     }
 
 
