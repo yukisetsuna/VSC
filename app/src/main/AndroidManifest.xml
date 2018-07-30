@@ -35,7 +35,8 @@
         <activity android:name=".AdminD" />
         <activity android:name=".MainA1" />
         <activity android:name=".MainA2" />
-        <activity android:name=".MainA3"></activity>
+        <activity android:name=".MainA3" />
+        <activity android:name=".AdminAA"></activity>
     </application>
 
 </manifest>
