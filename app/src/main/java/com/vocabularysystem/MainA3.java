@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainA3 extends AppCompatActivity {
 
@@ -12,8 +13,33 @@ public class MainA3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maina3);
-        endall();
 
+        TextView score1 = findViewById(R.id.score1);
+        TextView score2 = findViewById(R.id.score2);
+
+        final DataHandlers data2 = new DataHandlers();
+        final Integer cc1;
+
+        switch (data2.getDificulty().toString()){
+            case "Easy":
+                cc1 = 5;
+                break;
+            case "Normal":
+                cc1 = 10;
+                break;
+            case "Hard":
+                cc1 = 15;
+                break;
+            default:
+                cc1 = 5;
+                break;
+        }
+
+        score1.setText(data2.getStat5().toString());
+        score2.setText(cc1.toString());
+
+
+        endall();
     }
 
     public void endall(){

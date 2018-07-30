@@ -50,7 +50,7 @@ public class MainA1 extends AppCompatActivity {
 
                     data.setDificulty(set5);
                     set1.setText(data.getDificulty());
-                    startActivity(new Intent(MainA1.this, MainAA.class));
+                    startActivity(new Intent(MainA1.this, MainA2.class));
                 } else {
                     Toast.makeText(getApplicationContext(), "Nothing selected from Radio Group.", Toast.LENGTH_SHORT).show();
 

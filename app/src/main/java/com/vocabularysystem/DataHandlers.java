@@ -1,5 +1,7 @@
 package com.vocabularysystem;
 
+import java.util.HashMap;
+
 public class DataHandlers {
 
     private static String users;
@@ -16,8 +18,25 @@ public class DataHandlers {
     private static Integer stat2;
     private static String stat3;
     private static String stat4;
-    private static String stat5;
+    private static Integer stat5;
+    private static HashMap<String, String> stat7;
+    private static HashMap<String, String> stat8;
 
+    public static HashMap<String, String> getStat7() {
+        return stat7;
+    }
+
+    public static void setStat7(HashMap<String, String> stat7) {
+        DataHandlers.stat7 = stat7;
+    }
+
+    public static HashMap<String, String> getStat8() {
+        return stat8;
+    }
+
+    public static void setStat8(HashMap<String, String> stat8) {
+        DataHandlers.stat8 = stat8;
+    }
 
     public static Integer getStat1() {
         return stat1;
@@ -51,11 +70,11 @@ public class DataHandlers {
         DataHandlers.stat4 = stat4;
     }
 
-    public static String getStat5() {
+    public static Integer getStat5() {
         return stat5;
     }
 
-    public static void setStat5(String stat5) {
+    public static void setStat5(Integer stat5) {
         DataHandlers.stat5 = stat5;
     }
 

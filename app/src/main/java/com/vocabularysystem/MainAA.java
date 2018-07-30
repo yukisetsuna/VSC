@@ -16,6 +16,7 @@ public class MainAA extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainaa);
+        store();
     }
 
     public void store() {
@@ -26,29 +27,28 @@ public class MainAA extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(getApplicationContext(), "Testing", Toast.LENGTH_SHORT).show();
-
                 int set4 = set3.getCheckedRadioButtonId();
                 if (set4 != -1) {
                     RadioButton selectedRadioButton = findViewById(set4);
                     String set5 = selectedRadioButton.getText().toString();
-                    Toast.makeText(getApplicationContext(), set5, Toast.LENGTH_SHORT).show();
+                    String set6 = "";
+
                     switch (set5){
                         case "Can You Identify Me?":
-                            Toast.makeText(getApplicationContext(), "Nothing selected from Radio Group.", Toast.LENGTH_SHORT).show();
+                            set6 = "Identification";
                             break;
                         case "Is it Ture or is it False?":
-                            Toast.makeText(getApplicationContext(), "Nothing selected from Radio Group.", Toast.LENGTH_SHORT).show();
+                            set6 = "True or False";
                             break;
                         case "How Strong is Your Vocabulary?":
-                            Toast.makeText(getApplicationContext(), "Nothing selected from Radio Group.", Toast.LENGTH_SHORT).show();
+                            set6 = "Multiple Choice";
                             break;
                     }
-//
-//                    DataHandlers data = new DataHandlers();
-//                    data.setSubject(set5);
-//                    set1.setText(data.getSubject());
-//                    startActivity(new Intent(MainAA.this, MainA1.class));
+
+                   DataHandlers data = new DataHandlers();
+                    data.setTypes(set6);
+                    set1.setText(data.getTypes());
+                    startActivity(new Intent(MainAA.this, MainA1.class));
                 } else {
 
                     Toast.makeText(getApplicationContext(), "Nothing selected from Radio Group.", Toast.LENGTH_SHORT).show();
