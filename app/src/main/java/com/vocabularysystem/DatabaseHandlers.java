@@ -192,5 +192,17 @@ public class DatabaseHandlers extends SQLiteOpenHelper {
         return hex;
     }
 
+    public Cursor scorer(String name){
+        DataHandlers cc = new DataHandlers();
+
+        String sub1 = cc.getSubject().toString();
+        String sub2 = cc.getTypes().toString();
+        String sub3 = cc.getDificulty().toString();
+
+        String edge = "insert into `Scoreboard` (Score_Subject, Score_Name, Score_Count, Score_Diff, Score_Catt) values (\""+sub1+"\", \""+name+"\", \"80 \", \""+sub3+"\", \""+sub2+"\");";
+
+        Cursor hex = myDataBase.rawQuery(edge, null);
+        return hex;
+    }
 
 }
