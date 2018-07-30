@@ -35,7 +35,7 @@ public class MainA extends AppCompatActivity {
                     DataHandlers data = new DataHandlers();
                     data.setSubject(set5);
                     set1.setText(data.getSubject());
-                    startActivity(new Intent(MainA.this, MainA1.class));
+                    startActivity(new Intent(MainA.this, MainAA.class));
                 } else {
 
                     Toast.makeText(getApplicationContext(), "Nothing selected from Radio Group.", Toast.LENGTH_SHORT).show();
