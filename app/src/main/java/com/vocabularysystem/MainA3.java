@@ -29,6 +29,8 @@ public class MainA3 extends AppCompatActivity {
         final Button savescore = findViewById(R.id.score3);
         final DatabaseHandlers data1 = new DatabaseHandlers(MainA3.this);
         final DataHandlers data2 = new DataHandlers();
+
+
         final Integer cc1;
 
         switch (data2.getDificulty().toString()){
