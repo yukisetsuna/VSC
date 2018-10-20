@@ -7,18 +7,6 @@
 
 
     <Button
-        android:id="@+id/score3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/endss1"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/button_bg_light"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:text="Save Score"
-        android:textSize="30sp" />
-
-    <Button
         android:id="@+id/endss1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,16 +28,17 @@
         android:layout_marginTop="20sp"
         android:background="@drawable/textlines2"
         android:padding="10dp"
+        android:text="@string/hex2"
         android:textColor="#000"
         android:textSize="65sp" />
-
     <TextView
         android:id="@+id/score2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/score1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20sp"
+        android:layout_below="@id/score1"
+        android:text="@string/hex1"
         android:background="@drawable/textlines"
         android:padding="10dp"
         android:textColor="#000"
@@ -61,20 +50,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="47dp"
+        android:layout_marginTop="74dp"
         android:text="@string/scores"
         android:textColor="#000"
         android:textSize="50sp" />
-
-    <EditText
-        android:id="@+id/scname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/score3"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:hint="Enter Name Here"
-        android:inputType="textPersonName"
-        android:text=""
-        android:textSize="20dp" />
 </RelativeLayout>
